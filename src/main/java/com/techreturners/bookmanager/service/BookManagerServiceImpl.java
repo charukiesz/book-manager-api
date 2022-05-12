@@ -44,4 +44,11 @@ public class BookManagerServiceImpl implements BookManagerService {
         bookManagerRepository.save(retrievedBook);
     }
 
+   @Override
+    public void deleteBookById(Long id){
+        Book retrievedBook = bookManagerRepository.findById(id).get();
+       bookManagerRepository.delete(retrievedBook);
+
+
+   }
 }
